@@ -1,0 +1,3 @@
+﻿MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Dev\C_PlusPlus\DoodleJumper\DoodleJumper\scr\Dependencies\SFML\lib\sfml-graphics.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Dev\C_PlusPlus\DoodleJumper\Debug\DoodleJumper.exe : fatal error LNK1120: 1 unresolved externals

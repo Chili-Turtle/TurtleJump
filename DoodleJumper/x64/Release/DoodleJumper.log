@@ -1,0 +1,14 @@
+﻿  Game.cpp
+C:\Dev\C_PlusPlus\DoodleJumper\DoodleJumper\scr\Game.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Dev\C_PlusPlus\DoodleJumper\DoodleJumper\scr\Game.cpp(56,8): warning C4101: 'plat': unreferenced local variable
+C:\Dev\C_PlusPlus\DoodleJumper\DoodleJumper\scr\Game.cpp(107,41): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Dev\C_PlusPlus\DoodleJumper\DoodleJumper\scr\Game.cpp(119,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Dev\C_PlusPlus\DoodleJumper\DoodleJumper\scr\Game.cpp(132,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Dev\C_PlusPlus\DoodleJumper\DoodleJumper\scr\Game.cpp(132,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Dev\C_PlusPlus\DoodleJumper\DoodleJumper\scr\Game.cpp(154,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Dev\C_PlusPlus\DoodleJumper\DoodleJumper\scr\Game.cpp(154,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating code
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 96 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  DoodleJumper.vcxproj -> C:\Dev\C_PlusPlus\DoodleJumper\x64\Release\DoodleJumper.exe
