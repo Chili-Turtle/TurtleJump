@@ -1,4 +1,5 @@
 #include "Game.h";
+#include <memory>
 
 void Game::initVariables()
 {
@@ -10,6 +11,7 @@ void Game::initWindow()
 	this->videoMode.height = 400;
 	this->videoMode.width = 533;
 	this->window = new sf::RenderWindow(this->videoMode, "Turtle Jump", sf::Style::Titlebar | sf::Style::Close);
+	//std::unique_ptr<RenderWindow> window = std::make_unique<RenderWindow>(this->videoMode, "Turtle Jump", sf::Style::Titlebar | sf::Style::Close);
 	this->window->setFramerateLimit(60);
 }
 
@@ -42,37 +44,34 @@ void Game::initTextures()
 	t1.loadFromFile("scr/Images/background.png");
 	t2.loadFromFile("scr/Images/platform.png");
 	t3.loadFromFile("scr/Images/trutle character sing.png");
-	MyTextures* t = new MyTextures(t1, t2, t3);
+	std::shared_ptr<MyTextures> t = std::make_shared<MyTextures>(t1, t2, t3);
 	mytex = t;
-
 	std::cout << "texture inti";
 }
 
-const int PlatformAmount = 10;
 void Game::initPlatforms() //init platforms and player
 {
 	// platform allocation
-	point* myPoint = new point();
-	point plat[10];
+	std::unique_ptr<point> myPoint = std::make_unique<point>();
 
 	std::cout << "player sprite inti";
-	Actor* p = new Actor();
+	std::shared_ptr<Actor> p = std::make_shared<Actor>();
 	PlayerActor = p;
 
 	// start pos
-	PlayerActor->px = 200; // int x = 100, y = 100, h = 200;
+	PlayerActor->px = 200;
 	PlayerActor->py = 200;
 
 	PlayerActor->sprite.setTexture(mytex->t3);
 	PlayerActor->sprite.setScale(.08f, 0.08f);
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < PlatformAmount; i++)
 	{
-		platforms[i] = new Actor();
+		platforms[i] = std::make_shared<Actor>();
 	}
 
-	// platform placement
-	for (int i = 0; i < 10; i++)
+	// rand platform placement
+	for (int i = 0; i < PlatformAmount; i++)
 	{
 		platforms[i]->px = rand() % 400;
 		platforms[i]->py = rand() % 533;
@@ -149,7 +148,7 @@ void Game::draw()
 	this->window->draw(PlayerActor->sprite);
 
 	// draw new the platforms
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < PlatformAmount; i++)
 	{
 		PlatformsSp.setPosition(platforms[i]->px, platforms[i]->py);
 		this->window->draw(PlatformsSp);

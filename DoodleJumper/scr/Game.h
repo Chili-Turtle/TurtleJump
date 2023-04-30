@@ -56,10 +56,11 @@ private:
 	void initWindow();
 	void initPlatforms();
 public:
-	MyTextures* mytex;
-	Actor* platforms[10];
+	std::shared_ptr<MyTextures> mySmartP;
+	std::shared_ptr<MyTextures> mytex; // unique_ptr // weak_ptr (does not increase ref point, he is this valid use it)
+	std::shared_ptr<Actor> platforms[10];
 	point plat[10];
-	Actor* PlayerActor;
+	std::shared_ptr<Actor> PlayerActor;
 
 	// constructor / deconstructor
 	Game();
@@ -67,6 +68,7 @@ public:
 
 	// accesors
 	const bool running() const;
+	int PlatformAmount = 10;
 
 	// functions
 	void initTextures();
